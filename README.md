@@ -51,6 +51,7 @@ status: "production-ready"
 - **Extensive middleware support** (FreeRTOS, LWIP, LVGL, FatFS, USB stacks)
 - **Working examples** for all peripherals across multiple development boards
 - **Official PDF documentation** (Reference Manual, Datasheet, Errata Sheet, Application Notes)
+- **Structured markdown documentation** for Context7 integration (peripheral guides with examples)
 - **Migration guide** from AT32F403A/407 to AT32F435/437
 
 **Note:** This repository contains the complete Artery firmware library and official documentation. For the latest updates, visit [Artery Technology's official website](https://www.arterytek.com/).
@@ -79,6 +80,7 @@ This repository is designed as a **documentation source for Context7**, providin
 ## 🚀 Quick Start
 
 **Jump directly to:**
+- [📝 Markdown Documentation](#-markdown-documentation) - Structured peripheral guides
 - [📦 Firmware Library (v2.2.2)](#-main-documentation)
 - [📚 Official Documentation (PDFs)](#-official-pdf-documentation)
 - [🔧 Middleware Stack](#-middleware-support)
@@ -88,6 +90,33 @@ This repository is designed as a **documentation source for Context7**, providin
 ---
 
 ## 📚 Main Documentation
+
+### **[Markdown Documentation](docs/)** 📝
+
+**Structured peripheral documentation** optimized for Context7 integration:
+
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **ACC** | [ACC Auto Clock Calibration](docs/ACC_Auto_Clock_Calibration.md) | USB clock calibration, HICK trimming, calibration modes |
+| **ADC** | [ADC Analog to Digital Converter](docs/ADC_Analog_to_Digital_Converter.md) | Multi-channel ADC, DMA, trigger sources, oversampling |
+| **CAN** | [CAN Controller Area Network](docs/CAN_Controller_Area_Network.md) | CAN bus communication, filtering, bit timing, loopback |
+| **Cortex-M4** | [Cortex-M4 Core Features](docs/Cortex_M4_Core_Features.md) | SysTick, FPU, Bit-Banding, CMSIS-DSP |
+| **CRC** | [CRC Cyclic Redundancy Check](docs/CRC_Cyclic_Redundancy_Check.md) | Hardware CRC calculation, polynomial configs, standards |
+| **CRM** | [CRM Clock Reset Management](docs/CRM_Clock_Reset_Management.md) | Clock tree, PLL configuration, clock switching, CFD |
+
+**Each documentation includes:**
+- ✅ Architectural overview with block diagrams
+- ✅ Complete API reference
+- ✅ Working code examples
+- ✅ Configuration tables and formulas
+- ✅ Implementation checklists
+- ✅ Troubleshooting guides
+
+**Perfect for:**
+- Context7 AI integration and knowledge base
+- Quick reference during development
+- Learning peripheral capabilities
+- Copy-paste code examples
 
 ### **[Firmware Library v2.2.2](libraries/)** 🔥
 
@@ -307,6 +336,10 @@ Visit [Artery Technology](https://www.arterytek.com/) to download the latest ver
 ### By Peripheral
 Search by name: `QSPI`, `DVP`, `EMAC`, `CAN`, `Flash`, `PWC`, `ADC`, `TMR`, `USART`, etc.
 
+**Markdown Documentation:**
+- Quick access: `docs/ACC_Auto_Clock_Calibration.md`, `docs/ADC_Analog_to_Digital_Converter.md`, etc.
+- Search within docs: Use your editor's search to find specific APIs or configurations
+
 ### By Middleware
 Search for specific components:
 - "FreeRTOS task"
@@ -417,6 +450,7 @@ This repository contains **official Artery Technology documentation and firmware
 ### Included ✅
 
 - ✅ **Complete firmware library v2.2.2** with all peripheral drivers
+- ✅ **Structured markdown documentation** (ACC, ADC, CAN, Cortex-M4, CRC, CRM)
 - ✅ **Official PDF documentation** (RM, DS, ES, ANs)
 - ✅ **Production middleware** (FreeRTOS, LWIP, LVGL, FatFS, USB)
 - ✅ **Working examples** for all peripherals and middleware
@@ -427,9 +461,9 @@ This repository contains **official Artery Technology documentation and firmware
 
 ### Future Enhancements
 
+- 📌 Additional peripheral markdown documentation (DAC, DMA, GPIO, I2C, SPI, TMR, USART, USB, etc.)
 - 📌 Context7 integration guide for AI developers
 - 📌 Comprehensive FAQ for common development questions
-- 📌 API reference documentation with detailed examples
 - 📌 Advanced peripheral integration guides (QSPI XIP, DVP camera, EMAC networking)
 - 📌 Performance optimization tips and techniques
 - 📌 Low-power mode implementation guide
@@ -450,6 +484,7 @@ This repository contains **official Artery Technology documentation and firmware
 ## 🔗 Context7 Resources
 
 **In This Repository:**
+- **[Markdown Documentation](docs/):** Structured peripheral guides (ACC, ADC, CAN, Cortex-M4, CRC, CRM)
 - **[Firmware Library](libraries/):** Complete drivers and CMSIS support (v2.2.2)
 - **[Middleware](middlewares/):** FreeRTOS, LWIP, LVGL, FatFS, USB stacks
 - **[Examples](project/):** Working code for all peripherals
@@ -473,6 +508,7 @@ This repository contains **official Artery Technology documentation and firmware
 
 **🎯 MCU Firmware Library:** Complete reference for AT32F435/437 development  
 **📚 Context7 Source:** Primary documentation with firmware library v2.2.2  
+**📝 Markdown Docs:** Structured peripheral guides optimized for Context7  
 **🚀 Advanced Features:** QSPI, DVP, EMAC, EDMA support with middleware  
 **⚡ High Performance:** 288MHz, 4032KB Flash, 512KB SRAM  
 
