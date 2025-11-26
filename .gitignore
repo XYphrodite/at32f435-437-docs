@@ -1,0 +1,25 @@
+# Ignore AT32F435/437 vendor SDK directories
+# Keep only PDF documentation files
+
+# Vendor SDK directories (thousands of files)
+document/
+libraries/
+middlewares/
+project/
+utilities/
+
+# Build artifacts and temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
