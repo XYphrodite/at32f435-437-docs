@@ -43,7 +43,7 @@ The AT32F435/437 features a flexible internal memory architecture that allows pa
 ```
                         AT32F435/437 Memory Map
     ┌─────────────────────────────────────────────────────────────────┐
-    │                                                                  │
+    │                                                                 │
     │   0x2000 0000  ┌─────────────────────────────────────┐          │
     │                │                                     │          │
     │                │           SRAM                      │          │
