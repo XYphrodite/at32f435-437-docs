@@ -6,7 +6,7 @@ mcu_family: "AT32F435/437"
 architecture: "ARM Cortex-M4F"
 vendor: "Artery"
 documentation_version: "2.07"
-last_updated: "2024-11-26"
+last_updated: "2024-12-11"
 tags:
   - mcu
   - microcontroller
@@ -17,22 +17,49 @@ tags:
   - context7
   - artery-at32
 peripherals:
-  - CAN
-  - Flash
+  # Clock & Power
+  - ACC
+  - CRM
   - PWC
+  - SCFG
+  # Core & System
+  - Cortex_M4
+  - CRC
+  - DEBUG
+  - FLASH
+  - SRAM
+  # GPIO & Interrupts
+  - GPIO
+  - EXINT
+  # Timers
+  - TMR
+  - ERTC
+  - IRTMR
+  - WDT
+  - WWDT
+  # Analog
   - ADC
+  - DAC
+  # Communication
+  - USART
+  - SPI
   - I2C
   - I2S
-  - TMR
-  - USART
-  - USB
-  - GPIO
-  - EMAC
-  - QSPI
-  - DVP
-  - EDMA
+  - CAN
   - SDIO
+  - QSPI
+  - EMAC
+  # DMA
+  - DMA
+  - EDMA
+  # External Interfaces
   - XMC
+  - DVP
+  # USB
+  - USB_Device
+  - USB_Host
+documentation_coverage: "complete"
+total_peripherals: 32
 status: "production-ready"
 ---
 
@@ -93,16 +120,75 @@ This repository is designed as a **documentation source for Context7**, providin
 
 ### **[Markdown Documentation](docs/)** 📝
 
-**Structured peripheral documentation** optimized for Context7 integration:
+**Complete peripheral documentation** (32 files) optimized for Context7 integration:
 
+#### Clock & Power
 | Peripheral | Documentation | Description |
 |------------|---------------|-------------|
-| **ACC** | [ACC Auto Clock Calibration](docs/ACC_Auto_Clock_Calibration.md) | USB clock calibration, HICK trimming, calibration modes |
-| **ADC** | [ADC Analog to Digital Converter](docs/ADC_Analog_to_Digital_Converter.md) | Multi-channel ADC, DMA, trigger sources, oversampling |
-| **CAN** | [CAN Controller Area Network](docs/CAN_Controller_Area_Network.md) | CAN bus communication, filtering, bit timing, loopback |
-| **Cortex-M4** | [Cortex-M4 Core Features](docs/Cortex_M4_Core_Features.md) | SysTick, FPU, Bit-Banding, CMSIS-DSP |
-| **CRC** | [CRC Cyclic Redundancy Check](docs/CRC_Cyclic_Redundancy_Check.md) | Hardware CRC calculation, polynomial configs, standards |
-| **CRM** | [CRM Clock Reset Management](docs/CRM_Clock_Reset_Management.md) | Clock tree, PLL configuration, clock switching, CFD |
+| **ACC** | [ACC Auto Clock Calibration](docs/ACC_Auto_Clock_Calibration.md) | USB clock calibration, HICK trimming |
+| **CRM** | [CRM Clock Reset Management](docs/CRM_Clock_Reset_Management.md) | Clock tree, PLL, clock switching, CFD |
+| **PWC** | [PWC Power Controller](docs/PWC_Power_Controller.md) | Power modes, LDO, PVM, wakeup sources |
+| **SCFG** | [SCFG System Configuration](docs/SCFG_System_Configuration.md) | Memory remap, EXINT config, I/O compensation |
+
+#### Core & System
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **Cortex-M4** | [Cortex-M4 Core Features](docs/Cortex_M4_Core_Features.md) | SysTick, FPU, NVIC, Bit-Banding, DSP |
+| **CRC** | [CRC Cyclic Redundancy Check](docs/CRC_Cyclic_Redundancy_Check.md) | Hardware CRC calculation, polynomials |
+| **DEBUG** | [DEBUG MCU Debug Support](docs/DEBUG_MCU_Debug_Support.md) | Debug freeze, peripheral behavior |
+| **FLASH** | [FLASH Memory Controller](docs/FLASH_Memory_Controller.md) | Program, erase, SLIB protection, USD |
+| **SRAM** | [SRAM Extended Memory](docs/SRAM_Extended_Internal_Memory.md) | Memory partitioning, ZW Flash config |
+
+#### GPIO & Interrupts
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **GPIO** | [GPIO General Purpose I/O](docs/GPIO_General_Purpose_IO.md) | Pin config, alternate functions, drive strength |
+| **EXINT** | [EXINT External Interrupt](docs/EXINT_External_Interrupt.md) | External interrupts, event generation |
+
+#### Timers
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **TMR** | [TMR Timer](docs/TMR_Timer.md) | PWM, input capture, encoder, complementary outputs |
+| **ERTC** | [ERTC Enhanced RTC](docs/ERTC_Enhanced_Real_Time_Clock.md) | Calendar, alarms, wakeup timer, timestamps |
+| **IRTMR** | [IRTMR Infrared Timer](docs/IRTMR_Infrared_Timer.md) | IR signal modulation (TMR10+TMR11) |
+| **WDT** | [WDT Watchdog Timer](docs/WDT_Watchdog_Timer.md) | Independent watchdog, LICK clock |
+| **WWDT** | [WWDT Window Watchdog](docs/WWDT_Window_Watchdog_Timer.md) | Window watchdog, early wakeup interrupt |
+
+#### Analog
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **ADC** | [ADC Analog to Digital](docs/ADC_Analog_to_Digital_Converter.md) | Multi-channel, DMA, oversampling, triggers |
+| **DAC** | [DAC Digital to Analog](docs/DAC_Digital_to_Analog_Converter.md) | Dual channel, DMA, waveform generation |
+
+#### Communication
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **USART** | [USART Serial](docs/USART_Universal_Serial_Async_Receiver_Transmitter.md) | UART, LIN, IrDA, Smartcard, RS485 |
+| **SPI** | [SPI Serial Peripheral](docs/SPI_Serial_Peripheral_Interface.md) | Master/slave, DMA, CRC, quad mode |
+| **I2C** | [I2C Inter-Integrated Circuit](docs/I2C_Inter_Integrated_Circuit.md) | Multi-master, SMBus, DMA support |
+| **I2S** | [I2S Inter-IC Sound](docs/I2S_Inter_IC_Sound.md) | Audio interface, PCM, DMA |
+| **CAN** | [CAN Controller Area Network](docs/CAN_Controller_Area_Network.md) | CAN 2.0B, filtering, FIFO, loopback |
+| **SDIO** | [SDIO SD/MMC Interface](docs/SDIO_SD_MMC_Card_Interface.md) | SD card, MMC, 4-bit/8-bit modes |
+| **QSPI** | [QSPI Quad SPI](docs/QSPI_Quad_SPI.md) | External flash, XIP, command mode |
+| **EMAC** | [EMAC Ethernet MAC](docs/EMAC_Ethernet_MAC_Controller.md) | 10/100 Mbps, MII/RMII, PTP *(F437 only)* |
+
+#### DMA
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **DMA** | [DMA Direct Memory Access](docs/DMA_Direct_Memory_Access.md) | Memory-to-peripheral, circular, double buffer |
+| **EDMA** | [EDMA Enhanced DMA](docs/EDMA_Enhanced_DMA.md) | 2D transfers, linked-list, flex channels |
+
+#### External Interfaces
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **XMC** | [XMC External Memory](docs/XMC_External_Memory_Controller.md) | SRAM, NOR, NAND, SDRAM, LCD interface |
+| **DVP** | [DVP Digital Video Port](docs/DVP_Digital_Video_Port.md) | Camera interface, JPEG, snapshot mode |
+
+#### USB
+| Peripheral | Documentation | Description |
+|------------|---------------|-------------|
+| **USB Device** | [USB Device](docs/USB_Device_Universal_Serial_Bus.md) | CDC, MSC, HID, Audio, Composite |
+| **USB Host** | [USB Host](docs/USB_Host_Universal_Serial_Bus.md) | CDC, MSC, HID host classes |
 
 **Each documentation includes:**
 - ✅ Architectural overview with block diagrams
@@ -141,16 +227,14 @@ This repository is designed as a **documentation source for Context7**, providin
 ### **[Example Projects](project/)** 📝
 
 **Working examples organized by development board:**
-- **AT-START-F435:** Examples for AT32F435 series (lower flash/RAM variants)
-- **AT-START-F437:** Examples for AT32F437 series (higher performance)
-- **AT-SURF-F437:** Advanced applications including camera (DVP) and display demos
+- **AT-START-F435:** Examples for AT32F435 series
+- **AT-START-F437:** Examples for AT32F437 series (includes Ethernet)
 
 **Example categories:**
 - Basic peripherals (GPIO, TMR, USART, SPI, I2C)
 - Advanced peripherals (QSPI, DVP, EMAC, SDIO, XMC)
 - Communication (CAN, USB Device/Host, Ethernet)
 - Storage (Flash, SD card with FatFS)
-- Multimedia (DVP camera interface, display controllers)
 - System (DMA, EDMA, power management, watchdog)
 
 ### **[Utilities](utilities/)** 🧰
@@ -214,10 +298,9 @@ Located in [document/](document/) directory:
 
 ### Development Boards
 
-**Three reference designs included:**
-1. **AT-START-F435:** Entry-level development board
-2. **AT-START-F437:** High-performance development board
-3. **AT-SURF-F437:** Advanced board with camera, display, Ethernet
+**Reference designs supported:**
+1. **AT-START-F435:** Entry-level development board for AT32F435
+2. **AT-START-F437:** High-performance development board with Ethernet support
 
 ---
 
@@ -439,9 +522,10 @@ This repository contains **official Artery Technology documentation and firmware
 
 ![Firmware](https://img.shields.io/badge/Firmware-v2.2.2-green)
 ![Reference Manual](https://img.shields.io/badge/RM-v2.07-blue)
-![Peripherals](https://img.shields.io/badge/Peripherals-20+-blue)
+![Peripherals](https://img.shields.io/badge/Peripherals-32%20Documented-brightgreen)
 ![Middleware](https://img.shields.io/badge/Middleware-5%20Stacks-yellow)
 ![Drivers](https://img.shields.io/badge/Drivers-Complete-brightgreen)
+![Context7](https://img.shields.io/badge/Context7-Ready-success)
 
 ---
 
@@ -450,20 +534,21 @@ This repository contains **official Artery Technology documentation and firmware
 ### Included ✅
 
 - ✅ **Complete firmware library v2.2.2** with all peripheral drivers
-- ✅ **Structured markdown documentation** (ACC, ADC, CAN, Cortex-M4, CRC, CRM)
+- ✅ **Complete markdown documentation** (32 peripherals fully documented)
 - ✅ **Official PDF documentation** (RM, DS, ES, ANs)
 - ✅ **Production middleware** (FreeRTOS, LWIP, LVGL, FatFS, USB)
 - ✅ **Working examples** for all peripherals and middleware
 - ✅ **Development utilities** (IAP, QSPI algorithms, sLib demo)
-- ✅ **Multiple board support** (AT-START-F435, F437, AT-SURF-F437)
+- ✅ **Board support** (AT-START-F435, F437)
 - ✅ **CMSIS support** with ARM Cortex-M4F DSP library
 - ✅ **Migration guide** from AT32F403A/407
+- ✅ **FAQ documentation** for common questions
 
 ### Future Enhancements
 
-- 📌 Additional peripheral markdown documentation (DAC, DMA, GPIO, I2C, SPI, TMR, USART, USB, etc.)
+- ✅ ~~Additional peripheral markdown documentation~~ **COMPLETE** (32 peripherals documented)
+- ✅ ~~Comprehensive FAQ for common development questions~~ **COMPLETE** (FAQ.md)
 - 📌 Context7 integration guide for AI developers
-- 📌 Comprehensive FAQ for common development questions
 - 📌 Advanced peripheral integration guides (QSPI XIP, DVP camera, EMAC networking)
 - 📌 Performance optimization tips and techniques
 - 📌 Low-power mode implementation guide
@@ -484,11 +569,12 @@ This repository contains **official Artery Technology documentation and firmware
 ## 🔗 Context7 Resources
 
 **In This Repository:**
-- **[Markdown Documentation](docs/):** Structured peripheral guides (ACC, ADC, CAN, Cortex-M4, CRC, CRM)
+- **[Markdown Documentation](docs/):** Complete peripheral documentation (32 files covering all AT32F435/437 peripherals)
 - **[Firmware Library](libraries/):** Complete drivers and CMSIS support (v2.2.2)
 - **[Middleware](middlewares/):** FreeRTOS, LWIP, LVGL, FatFS, USB stacks
 - **[Examples](project/):** Working code for all peripherals
 - **[Utilities](utilities/):** Development tools and demos
+- **[FAQ](FAQ.md):** Common questions and answers
 
 **External Resources:**
 - **[Official Documentation](https://www.arterytek.com/):** Download latest PDFs and tools
@@ -501,14 +587,15 @@ This repository contains **official Artery Technology documentation and firmware
 
 ---
 
-**Last Updated:** November 2024  
+**Last Updated:** December 2024  
 **Firmware Version:** v2.2.2  
 **Reference Manual:** v2.07  
+**Documentation Coverage:** 32 peripherals (100% complete)  
 **Repository Status:** ✅ Production Ready for Context7
 
 **🎯 MCU Firmware Library:** Complete reference for AT32F435/437 development  
 **📚 Context7 Source:** Primary documentation with firmware library v2.2.2  
-**📝 Markdown Docs:** Structured peripheral guides optimized for Context7  
+**📝 Markdown Docs:** 32 comprehensive peripheral guides optimized for Context7  
 **🚀 Advanced Features:** QSPI, DVP, EMAC, EDMA support with middleware  
 **⚡ High Performance:** 288MHz, 4032KB Flash, 512KB SRAM  
 

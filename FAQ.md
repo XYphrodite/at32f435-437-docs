@@ -3,6 +3,8 @@
 
 **For Context7:** Optimized for semantic search and quick retrieval
 
+> 📚 **Complete Documentation Available:** 32 peripheral guides in [docs/](docs/) folder covering all AT32F435/437 peripherals with API references, code examples, and troubleshooting.
+
 ---
 
 ## 🔥 Top 10 Most Common Questions
@@ -100,7 +102,7 @@
 3. Enable XIP (execute-in-place) mode
 4. Map flash to memory space
 
-**Example Location:** `project/at_start_f437/examples/qspi/`
+**Example Location:** See [QSPI Documentation](docs/QSPI_Quad_SPI.md)
 
 **QSPI Flash Algorithm:** Available in `utilities/at32f435_437_qspi_algorithm_demo/`
 
@@ -156,7 +158,7 @@
 **What's Included:**
 - ✅ LWIP 2.1.2 stack in `middlewares/lwip_2.1.2/`
 - ✅ EMAC HAL driver in `libraries/drivers/`
-- ✅ Example projects in `project/at_surf_f437/examples/emac/`
+- ✅ Complete documentation: [EMAC Ethernet MAC](docs/EMAC_Ethernet_MAC_Controller.md)
 - ✅ IAP over Ethernet demo in `utilities/at32f437_emac_iap_demo/`
 
 **Features:**
@@ -178,7 +180,7 @@
 - Modbus TCP for industrial control
 - Firmware update over network
 
-**Reference:** EMAC examples in `project/at_surf_f437/examples/emac/`
+**Reference:** [EMAC Documentation](docs/EMAC_Ethernet_MAC_Controller.md)
 
 ---
 
@@ -233,7 +235,7 @@
 - OV5640 (5MP with JPEG)
 - Other CMOS sensors with DVP interface
 
-**Example Location:** `project/at_surf_f437/examples/dvp/` and applications
+**Documentation:** [DVP Digital Video Port](docs/DVP_Digital_Video_Port.md)
 
 **Implementation Steps:**
 1. Connect camera to DVP pins
@@ -255,7 +257,7 @@
 ### 9. What development boards are available?
 
 **Tags:** #boards #hardware #development-kit  
-**Quick Answer:** Three official Artery development boards
+**Quick Answer:** Two official Artery development boards supported
 
 **Available Boards:**
 
@@ -270,20 +272,9 @@
 - AT32F437RMT7 or AT32F437VMT7 MCU
 - More GPIO and peripherals
 - QSPI flash expansion
+- Ethernet (EMAC) support
 
-**3. AT-SURF-F437:**
-- Advanced evaluation board
-- AT32F437ZMT7 MCU (144-pin, max memory)
-- DVP camera interface
-- TFT LCD display
-- Ethernet (EMAC) connector
-- SD card slot
-- Full peripheral breakout
-
-**Example Code:**
-- AT-START-F435: `project/at_start_f435/`
-- AT-START-F437: `project/at_start_f437/`
-- AT-SURF-F437: `project/at_surf_f437/`
+**Documentation:** See [docs/](docs/) folder for complete peripheral documentation (32 files)
 
 **Purchasing:** Available from [Artery Technology](https://www.arterytek.com/) and distributors
 
@@ -332,14 +323,16 @@
 
 #### Advanced
 - [What advanced peripherals are new?](#3-what-advanced-peripherals-are-new-in-f435437)
-- [How to use QSPI?](#4-how-do-i-use-qspi-with-external-flash)
-- [How to implement Ethernet (EMAC)?](#6-how-do-i-implement-ethernet-emac)
-- [How to implement camera (DVP)?](#8-how-do-i-implement-camera-interface-dvp)
+- [How to use QSPI?](#4-how-do-i-use-qspi-with-external-flash) → [QSPI Docs](docs/QSPI_Quad_SPI.md)
+- [How to implement Ethernet (EMAC)?](#6-how-do-i-implement-ethernet-emac) → [EMAC Docs](docs/EMAC_Ethernet_MAC_Controller.md)
+- [How to implement camera (DVP)?](#8-how-do-i-implement-camera-interface-dvp) → [DVP Docs](docs/DVP_Digital_Video_Port.md)
 
 #### Communication
-- [USB capabilities](#7-what-usb-capabilities-are-supported)
-- CAN bus (see examples in `project/*/examples/can/`)
-- I2C, SPI, USART (see examples in `project/*/examples/`)
+- [USB capabilities](#7-what-usb-capabilities-are-supported) → [USB Device](docs/USB_Device_Universal_Serial_Bus.md) / [USB Host](docs/USB_Host_Universal_Serial_Bus.md)
+- CAN bus → [CAN Docs](docs/CAN_Controller_Area_Network.md)
+- I2C → [I2C Docs](docs/I2C_Inter_Integrated_Circuit.md)
+- SPI → [SPI Docs](docs/SPI_Serial_Peripheral_Interface.md)
+- USART → [USART Docs](docs/USART_Universal_Serial_Async_Receiver_Transmitter.md)
 
 ### Middleware
 - [FreeRTOS](#5-can-i-use-freertos-with-this-mcu)
@@ -423,8 +416,8 @@
 ---
 
 **Status:** 10 common questions answered  
+**Documentation:** 32 peripheral guides in [docs/](docs/) folder  
 **For Device Errata:** Download ES0003 from [Artery Technology](https://www.arterytek.com/)  
-**For Code Examples:** See `project/` directories  
 **For Middleware:** See `middlewares/` directory  
-**Last Updated:** November 2024
+**Last Updated:** December 2024
 
